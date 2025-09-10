@@ -1,0 +1,193 @@
+// 🎨 Variables
+$gold: #d1c2a8;
+$purple: #353178;
+$black: #000;
+$white: #fff;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin shadow {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+@mixin hover-effect {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-3px) scale(1.01);
+    opacity: 0.9;
+  }
+}
+@mixin hover-fancy($bg-light, $bg-dark) {
+  transition: all 0.4s ease;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(135deg, $bg-light, $bg-dark);
+    transform: translateY(-2px) scale(1.01) rotate(-0.5deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    color: $white !important;
+  }
+}
+
+.container {
+  @include flex-center;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 100vh;
+  background: $white;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  @include shadow;
+  animation: cardEnterFancy 0.6s ease-out forwards;
+
+  .logoWrapper {
+    margin-bottom: 1rem;
+    border-bottom: $gold 2px solid;
+  }
+
+  .socials {
+    @include flex-center;
+    gap: 3rem;
+    margin: 1rem 0 1.5rem;
+
+    a {
+      @include flex-center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: $white;
+      font-size: 1.3rem;
+      @include shadow;
+      @include hover-effect;
+
+      &.instagram {
+        background: linear-gradient(135deg, #fd1d1d, #833ab4);
+      }
+      &.location {
+        background: linear-gradient(135deg, $purple, $gold);
+      }
+      &.whatsapp {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+      }
+    }
+  }
+
+  .contact,
+  .reviews {
+    @include flex-center;
+    padding: 0.8rem 0;
+    border-radius: 0.6rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: $purple;
+    border: $purple 1.5px solid;
+    @include shadow;
+    @include hover-effect;
+  }
+  .contact {
+    margin-bottom: 2rem;
+  }
+  .reviews {
+    margin-Top: 2rem;
+    color: $white;
+    background-color: $purple;
+  }
+
+  .item {
+    @include flex-center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.8rem;
+    margin-top: 1rem;
+    text-align: left;
+    background: #f7f7f7;
+    @include shadow;
+    transition: all 0.3s ease;
+
+    .icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .content {
+      flex-grow: 1;
+      .label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #333;
+      }
+      .value {
+        font-size: 0.95rem;
+        margin-top: 0.2rem;
+        a {
+          text-decoration: none;
+          font-weight: 500;
+          color: inherit;
+          @include hover-effect;
+        }
+      }
+    }
+
+    &.email .icon {
+      color: #d44638;
+    }
+    &.phone .icon {
+      color: #34a853;
+    }
+    &.office .icon {
+      color: #4285f4;
+    }
+
+    &.email {
+      @include hover-fancy(#f28b82, #d44638);
+    }
+    &.phone {
+      @include hover-fancy(#81c995, #34a853);
+    }
+    &.office {
+      @include hover-fancy(#a0c4ff, #4285f4);
+    }
+  }
+
+  .reviews {
+    flex-direction: column;
+    .stars {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.address {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 380px;
+  color: $black;
+}
+@keyframes cardEnterFancy {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.01);
+  }
+  80% {
+    transform: translateY(5px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
