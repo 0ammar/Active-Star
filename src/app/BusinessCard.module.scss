@@ -191,13 +191,13 @@ $white: #fff;
   }
 }
 .catalogWrapper {
-  margin-bottom: 1rem; 
+  margin-bottom: .9rem; 
   @include flex-center;
 }
 .catalogButton {
   background: linear-gradient( $purple);
   color: $white;
-  padding: .9rem 1.8rem;
+  padding: .5rem 1.8rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 0.7rem;
