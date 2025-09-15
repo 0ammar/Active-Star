@@ -20,6 +20,13 @@ const BusinessCard = () => (
         <a className={styles.whatsapp} title='Whatsapp' href="https://wa.me/962788308553" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
       </div>
 
+      {/* Our Catalog */}
+      <div className={styles.catalogWrapper}>
+        <a className={styles.catalogButton} href="/catalog.pdf" target="_blank" rel="noopener noreferrer">
+          Explore Our Catalog
+        </a>
+      </div>
+
       {/* Save Contact */}
       <a className={styles.contact} href="active-star.vcf" download >Add To Contact</a>
 
