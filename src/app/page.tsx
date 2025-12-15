@@ -22,7 +22,7 @@ const BusinessCard = () => (
 
       {/* Our Catalog */}
       <div className={styles.catalogWrapper}>
-        <a className={styles.catalogButton} href="/catalog.pdf" target="_blank" rel="noopener noreferrer">
+        <a className={styles.catalogButton} href="/ActiveStarCatalog.pdf" target="_blank" rel="noopener noreferrer">
           Explore Our Catalog
         </a>
       </div>
